@@ -236,7 +236,7 @@ modemmanager_connected_method_static_ipv4() {
 	}
 	mask=$(cdr2mask "${prefix}")
 
-	[ -n "${mtu}" ] && /sbin/ip link set dev "${wwan}" mtu "${mtu}"
+	[ -n "${mtu}" ] && ip link set dev "${wwan}" mtu "${mtu}"
 
 	proto_init_update "${wwan}" 1
 	proto_set_keep 1
@@ -299,7 +299,7 @@ modemmanager_connected_method_static_ipv6() {
 		return
 	}
 
-	[ -n "${mtu}" ] && /sbin/ip link set dev "${wwan}" mtu "${mtu}"
+	[ -n "${mtu}" ] && ip link set dev "${wwan}" mtu "${mtu}"
 
 	proto_init_update "${wwan}" 1
 	proto_set_keep 1
